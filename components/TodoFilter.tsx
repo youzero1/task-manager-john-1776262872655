@@ -29,7 +29,7 @@ export default function TodoFilter({
           onClick={() => onFilterChange(f.value)}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
             filter === f.value
-              ? 'bg-indigo-100 text-indigo-700'
+              ? 'bg-orange-100 text-orange-700'
               : 'text-gray-400 hover:text-gray-600 hover:bg-gray-50'
           }`}
         >
@@ -38,7 +38,7 @@ export default function TodoFilter({
             <span
               className={`inline-flex items-center justify-center w-4 h-4 rounded-full text-xs ${
                 filter === f.value
-                  ? 'bg-indigo-200 text-indigo-700'
+                  ? 'bg-orange-200 text-orange-700'
                   : 'bg-gray-100 text-gray-500'
               }`}
             >

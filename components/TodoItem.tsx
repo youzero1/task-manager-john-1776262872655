@@ -36,14 +36,14 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
   };
 
   return (
-    <li className="px-6 py-4 flex items-center gap-3 group hover:bg-gray-50 transition-colors duration-150">
+    <li className="px-6 py-4 flex items-center gap-3 group hover:bg-orange-50 transition-colors duration-150">
       {/* Checkbox */}
       <button
         onClick={() => onToggle(todo.id)}
         className={`flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${
           todo.completed
-            ? 'bg-gradient-to-r from-indigo-500 to-purple-500 border-transparent'
-            : 'border-gray-300 hover:border-indigo-400'
+            ? 'bg-gradient-to-r from-orange-500 to-amber-500 border-transparent'
+            : 'border-gray-300 hover:border-orange-400'
         }`}
         aria-label={todo.completed ? 'Mark as incomplete' : 'Mark as complete'}
       >
@@ -69,7 +69,7 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
           onKeyDown={handleKeyDown}
           onBlur={handleSave}
           autoFocus
-          className="flex-1 px-2 py-1 text-sm border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-700"
+          className="flex-1 px-2 py-1 text-sm border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300 text-gray-700"
         />
       ) : (
         <span
@@ -88,7 +88,7 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
         {!isEditing && (
           <button
             onClick={handleEdit}
-            className="p-1.5 rounded-lg text-gray-300 hover:text-indigo-500 hover:bg-indigo-50 transition-all duration-150"
+            className="p-1.5 rounded-lg text-gray-300 hover:text-orange-500 hover:bg-orange-50 transition-all duration-150"
             aria-label="Edit todo"
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
