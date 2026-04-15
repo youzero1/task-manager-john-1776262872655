@@ -20,7 +20,7 @@ export default function TodoInput({ onAdd }: { onAdd: (text: string) => void }) 
         value={inputValue}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
         placeholder="What needs to be done?"
-        className="flex-1 px-4 py-3 rounded-xl border border-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent text-gray-700 placeholder-gray-300 text-sm transition-all duration-200"
+        className="flex-1 px-4 py-3 rounded-xl border border-orange-200 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-500 focus:border-transparent text-gray-700 dark:text-gray-100 placeholder-gray-300 dark:placeholder-gray-500 text-sm transition-all duration-200"
       />
       <button
         type="submit"

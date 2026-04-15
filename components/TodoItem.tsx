@@ -36,14 +36,14 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
   };
 
   return (
-    <li className="px-6 py-4 flex items-center gap-3 group hover:bg-orange-50 transition-colors duration-150">
+    <li className="px-6 py-4 flex items-center gap-3 group hover:bg-orange-50 dark:hover:bg-gray-700/50 transition-colors duration-150">
       {/* Checkbox */}
       <button
         onClick={() => onToggle(todo.id)}
         className={`flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${
           todo.completed
             ? 'bg-gradient-to-r from-orange-500 to-amber-500 border-transparent'
-            : 'border-gray-300 hover:border-orange-400'
+            : 'border-gray-300 dark:border-gray-600 hover:border-orange-400 dark:hover:border-orange-500'
         }`}
         aria-label={todo.completed ? 'Mark as incomplete' : 'Mark as complete'}
       >
@@ -69,13 +69,15 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
           onKeyDown={handleKeyDown}
           onBlur={handleSave}
           autoFocus
-          className="flex-1 px-2 py-1 text-sm border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300 text-gray-700"
+          className="flex-1 px-2 py-1 text-sm border border-orange-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-500 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-700 transition-colors duration-200"
         />
       ) : (
         <span
           onDoubleClick={handleEdit}
           className={`flex-1 text-sm cursor-default select-none ${
-            todo.completed ? 'line-through text-gray-300' : 'text-gray-700'
+            todo.completed
+              ? 'line-through text-gray-300 dark:text-gray-600'
+              : 'text-gray-700 dark:text-gray-200'
           }`}
           title="Double-click to edit"
         >
@@ -88,7 +90,7 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
         {!isEditing && (
           <button
             onClick={handleEdit}
-            className="p-1.5 rounded-lg text-gray-300 hover:text-orange-500 hover:bg-orange-50 transition-all duration-150"
+            className="p-1.5 rounded-lg text-gray-300 dark:text-gray-600 hover:text-orange-500 dark:hover:text-orange-400 hover:bg-orange-50 dark:hover:bg-gray-600 transition-all duration-150"
             aria-label="Edit todo"
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -102,7 +104,7 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
         )}
         <button
           onClick={() => onDelete(todo.id)}
-          className="p-1.5 rounded-lg text-gray-300 hover:text-rose-500 hover:bg-rose-50 transition-all duration-150"
+          className="p-1.5 rounded-lg text-gray-300 dark:text-gray-600 hover:text-rose-500 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-gray-600 transition-all duration-150"
           aria-label="Delete todo"
         >
           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

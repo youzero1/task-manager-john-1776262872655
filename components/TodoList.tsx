@@ -14,13 +14,13 @@ export default function TodoList({ todos, onToggle, onDelete, onEdit }: TodoList
   if (todos.length === 0) {
     return (
       <div className="px-6 py-8 text-center">
-        <p className="text-gray-300 text-sm">Nothing here</p>
+        <p className="text-gray-300 dark:text-gray-600 text-sm">Nothing here</p>
       </div>
     );
   }
 
   return (
-    <ul className="divide-y divide-gray-50">
+    <ul className="divide-y divide-gray-50 dark:divide-gray-700">
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
